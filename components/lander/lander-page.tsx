@@ -33,7 +33,7 @@ export function LanderPage() {
           <SectionLabel>/// live surface mock &gt;&gt;&gt;</SectionLabel>
           <h2 className="font-primary text-center text-3xl font-bold tracking-tight sm:text-4xl">
            Example of the guided experience.
-            <span className="mt-2 block font-secondary text-2xl text-primary sm:text-3xl">
+            <span className="mt-2 block font-tertiary text-2xl text-primary sm:text-3xl">
               Where is the runnable HUD?
             </span>
           </h2>

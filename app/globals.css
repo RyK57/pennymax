@@ -167,7 +167,7 @@
   src: local('RosaBright'), url('/fonts/Rosa Bright.otf') format('opentype');
 }
 
-.font-secondary {
+.font-tertiary {
   word-break: break-word;
   overflow-wrap: break-word;
   display: block;

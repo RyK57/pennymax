@@ -29,7 +29,7 @@ export function LanderHero() {
         <h1 className="font-primary text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl">
           Simulate money choices
         </h1>
-        <p className="font-secondary mt-3 text-3xl text-primary sm:text-4xl md:text-5xl">
+        <p className="font-tertiary mt-3 text-3xl text-primary sm:text-4xl md:text-5xl">
           scene by scene.
         </p>
         {/* <p className="mt-6 max-w-xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
