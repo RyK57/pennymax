@@ -1,5 +1,9 @@
-import { ExperienceHome } from "@/components/guided/experience-home"
+import { LanderPage } from "@/components/lander"
 
 export default function Home() {
-  return <ExperienceHome />
+  return (
+    <div className="font-primary">
+      <LanderPage />
+    </div>
+  )
 }
