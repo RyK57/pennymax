@@ -1,0 +1,18 @@
+import { createClient } from "@supabase/supabase-js";
+
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+
+/**
+ * Service role client - bypasses RLS. Use only for server-side admin operations
+ * (e.g. auth rate limiting before user is authenticated).
+ * Requires SUPABASE_SERVICE_ROLE_KEY in env.
+ */
+export function createAdminClient() {
+  if (!supabaseUrl || !supabaseServiceKey) {
+    return null;
+  }
+  return createClient(supabaseUrl, supabaseServiceKey, {
+    auth: { persistSession: false },
+  });
+}
