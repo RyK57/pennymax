@@ -31,11 +31,11 @@ export function LanderInteractiveMock() {
   const blurb = useMemo(() => {
     switch (choiceIdx) {
       case 0:
-        return "Nice—savings nudged. The backend would send this line to POST /api/guided/step with your session id."
+        return "Saving bumps the jar and steadies the tree—kids feel the tradeoff without a lecture."
       case 1:
-        return "Spend events still hit the same JSON schema: balanceCents, treeHealth, suggestedActions[] from the LLM."
+        return "A small treat costs cash and stresses the tree—quick feedback on impulse vs. plan."
       default:
-        return "Tree-first play maps to script beats in guided_engine: outcomes stay playing until win/loss gates fire."
+        return "Watering first protects long-term health—same lesson, shown through play, not a slide deck."
     }
   }, [choiceIdx])
 
@@ -66,8 +66,8 @@ export function LanderInteractiveMock() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30" />
           <div className="absolute left-4 right-4 top-4 flex flex-wrap items-center justify-between gap-2 text-xs">
-            <span className="rounded-full bg-black/50 px-3 py-1 font-mono backdrop-blur-md">
-              session: mock-lander
+            <span className="rounded-full bg-black/50 px-3 py-1 text-[11px] font-medium backdrop-blur-md">
+              Sample scene
             </span>
             <span className="flex items-center gap-1 rounded-full bg-emerald-500/20 px-3 py-1 font-medium text-emerald-100 ring-1 ring-emerald-400/40">
               <TreeDeciduous className="h-3.5 w-3.5" />
@@ -106,37 +106,36 @@ export function LanderInteractiveMock() {
         <div className="flex items-center gap-2 text-primary">
           <Sparkles className="h-5 w-5" />
           <h3 className="font-primary text-lg font-semibold tracking-tight">
-            HUD snapshot
+            At a glance
           </h3>
         </div>
         <dl className="space-y-3 text-sm">
           <div className="flex items-center justify-between rounded-xl bg-muted/60 px-3 py-2">
             <dt className="flex items-center gap-2 text-muted-foreground">
               <Coins className="h-4 w-4" />
-              balanceCents
+              Balance
             </dt>
             <dd className="font-mono font-medium text-foreground">
               {formatCents(balance)}
             </dd>
           </div>
           <div className="flex items-center justify-between rounded-xl bg-muted/60 px-3 py-2">
-            <dt className="text-muted-foreground">treeHealth</dt>
+            <dt className="text-muted-foreground">Money Tree</dt>
             <dd className="font-mono font-medium text-foreground">{tree}</dd>
           </div>
           <div className="flex items-center justify-between rounded-xl bg-muted/60 px-3 py-2">
-            <dt className="text-muted-foreground">scriptStep</dt>
+            <dt className="text-muted-foreground">Story progress</dt>
             <dd className="font-mono font-medium text-foreground">
               {4 + choiceIdx} / 10
             </dd>
           </div>
         </dl>
         <p className="text-xs leading-relaxed text-muted-foreground">
-          This panel mirrors fields returned by <code className="font-mono text-foreground">run_guided_step</code> in{" "}
-          <code className="font-mono text-foreground">api/agents/guided_engine.py</code>
-          —the real client hydrates Zustand from the same keys.
+          In the live app, these numbers update every turn so families and teachers can see cause
+          and effect without digging through menus.
         </p>
         <Button className="w-full rounded-full" asChild>
-          <Link href={DEMO_HREF}>Run it against the API</Link>
+          <Link href={DEMO_HREF}>Try the full experience</Link>
         </Button>
       </aside>
     </div>

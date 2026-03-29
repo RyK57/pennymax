@@ -30,16 +30,17 @@ export function LanderPage() {
           id={SECTION_IDS.demo}
           className="mx-auto max-w-6xl scroll-mt-28 px-4 py-20 sm:px-6"
         >
-          <SectionLabel>/// live surface mock &gt;&gt;&gt;</SectionLabel>
+          <SectionLabel>Try it on the page</SectionLabel>
           <h2 className="font-primary text-center text-3xl font-bold tracking-tight sm:text-4xl">
-           Example of the guided experience.
+            A guided moment with Penny
             <span className="mt-2 block font-tertiary text-2xl text-primary sm:text-3xl">
-              Where is the runnable HUD?
+              Tap a choice—watch balance and tree shift
             </span>
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-center text-sm leading-relaxed text-muted-foreground sm:text-base">
-            Below is an example of the guided experience.
-            </p>
+            This preview shows how each decision nudges savings, spending, and the Money Tree in
+            one place—no signup required to get the feel.
+          </p>
           <div className="mt-14">
             <LanderInteractiveMock />
           </div>
@@ -50,11 +51,11 @@ export function LanderPage() {
           className="border-y border-border/80 bg-muted/20 py-20"
         >
           <div className="mx-auto max-w-6xl px-4 sm:px-6">
-            <SectionLabel>/// guided pipeline &gt;&gt;&gt;</SectionLabel>
+            <SectionLabel>From first tap to next scene</SectionLabel>
             <h2 className="font-primary text-center text-3xl font-bold tracking-tight sm:text-4xl">
               One flow from{" "}
-              <span className="font-tertiary-inline text-primary">profile JSON</span> to{" "}
-              <span className="font-tertiary-inline text-primary">scene payload</span>
+              <span className="font-tertiary-inline text-primary">who is playing</span> to{" "}
+              <span className="font-tertiary-inline text-primary">what they see next</span>
             </h2>
             <div className="mt-12">
               <LanderPipeline />
@@ -66,13 +67,13 @@ export function LanderPage() {
           id={SECTION_IDS.architecture}
           className="mx-auto max-w-6xl scroll-mt-28 px-4 py-20 sm:px-6"
         >
-          <SectionLabel>/// system architecture &gt;&gt;&gt;</SectionLabel>
+          <SectionLabel>How the pieces connect</SectionLabel>
           <h2 className="font-primary text-center text-3xl font-bold tracking-tight sm:text-4xl">
-            Pictorial backend + frontend contract
+            Simple diagrams, serious care for kid data
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-center text-sm text-muted-foreground sm:text-base">
-            Embedded diagrams from our planning repo—same boxes we use to explain SESSIONS,
-            compaction, and dual-model generation to stakeholders.
+            Sketches of how play moves from the browser to the story engine and back—handy for
+            parents, schools, and anyone reviewing safety and flow.
           </p>
           <div className="mt-14">
             <LanderDiagrams />
@@ -81,9 +82,9 @@ export function LanderPage() {
 
         <section id={SECTION_IDS.roadmap} className="bg-muted/15 py-20">
           <div className="mx-auto max-w-6xl px-4 sm:px-6">
-            <SectionLabel>/// roadmap &gt;&gt;&gt;</SectionLabel>
+            <SectionLabel>Where we&apos;re headed</SectionLabel>
             <h2 className="font-primary mb-12 text-center text-3xl font-bold tracking-tight sm:text-4xl">
-              Shipping path after the hackathon
+              What ships now—and what comes next
             </h2>
             <LanderRoadmap />
           </div>
@@ -93,12 +94,13 @@ export function LanderPage() {
           id={SECTION_IDS.mesh}
           className="mx-auto max-w-6xl scroll-mt-28 px-4 py-20 sm:px-6"
         >
-          <SectionLabel>/// under the hood &gt;&gt;&gt;</SectionLabel>
+          <SectionLabel>What makes each turn feel alive</SectionLabel>
           <h2 className="font-primary text-center text-3xl font-bold tracking-tight sm:text-4xl">
-            A mesh of services around every turn
+            Story, art, and state—working together
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-center text-sm text-muted-foreground sm:text-base">
-            Tap a node—mirrors how we narrate the system in live demos (mobile-friendly).
+            Tap a bubble to see what that layer does for your player—plain language, works on a
+            phone.
           </p>
           <div className="mt-14">
             <LanderFeatureMesh />

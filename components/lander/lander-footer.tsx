@@ -4,10 +4,10 @@ import Link from "next/link"
 import { DEMO_HREF, FREE_PLAY_HREF, SECTION_IDS } from "./lander-constants"
 
 const footerLinks = [
-  { href: `#${SECTION_IDS.demo}`, label: "Demo" },
-  { href: `#${SECTION_IDS.pipeline}`, label: "Pipeline" },
-  { href: `#${SECTION_IDS.architecture}`, label: "Architecture" },
-  { href: `#${SECTION_IDS.mesh}`, label: "Stack" },
+  { href: `#${SECTION_IDS.demo}`, label: "See it in action" },
+  { href: `#${SECTION_IDS.pipeline}`, label: "How it works" },
+  { href: `#${SECTION_IDS.architecture}`, label: "Behind the scenes" },
+  { href: `#${SECTION_IDS.mesh}`, label: "What powers each scene" },
 ] as const
 
 export function LanderFooter() {
@@ -20,7 +20,7 @@ export function LanderFooter() {
             <span className="font-primary text-lg font-semibold">Pennymax</span>
           </Link>
           <p className="text-sm leading-relaxed text-muted-foreground">
-            Alternate financial literacy sandbox—guided narrative engine plus open map play.
+            Interactive money stories for kids—guided adventures plus an open world to explore.
           </p>
         </div>
         <div className="flex flex-wrap gap-8 text-sm">
@@ -50,7 +50,7 @@ export function LanderFooter() {
               </li>
               <li>
                 <Link href={FREE_PLAY_HREF} className="text-foreground hover:text-primary">
-                  Free form
+                  Open map
                 </Link>
               </li>
             </ul>

@@ -44,50 +44,50 @@ export function LanderPipeline() {
   return (
     <div className="w-full overflow-x-auto pb-2">
       <p className="mb-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-        <span className="font-semibold text-primary">Green</span> arrows trace the learner&apos;s
-        path through onboarding and turns.{" "}
-        <span className="font-semibold text-accent">Gold</span> marks synthesis inside the Flask
-        engine (prompt assembly + image).{" "}
-        <span className="font-semibold text-destructive">Red</span> highlights terminal outcomes
-        (won / lost) and letter generation.
+        <span className="font-semibold text-primary">Green</span> is your learner—profile, start,
+        and each choice.{" "}
+        <span className="font-semibold text-accent">Gold</span> is where we weave the next story
+        beat and picture.{" "}
+        <span className="font-semibold text-destructive">Red</span> is how wins, losses, and
+        wrap-ups close the loop.
       </p>
       <div className="flex min-w-[min(100%,920px)] flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
         <div className="flex flex-wrap items-center justify-center gap-2 lg:justify-start">
           <PipelineNode
-            title="Profile JSON"
-            subtitle="Age band, goal, tone"
+            title="Learner profile"
+            subtitle="Age, goal, tone"
             className="border-primary/30"
           />
           <Connector variant="user" />
           <PipelineNode
-            title="POST /api/guided/start"
-            subtitle="New session in SESSIONS dict"
+            title="Start session"
+            subtitle="New story, saved state"
             className="border-primary/30"
           />
         </div>
         <div className="flex flex-wrap items-center justify-center gap-2">
           <PipelineNode
-            title="OpenAI JSON"
-            subtitle="message_json_object script + state"
+            title="Next story beat"
+            subtitle="Script, choices, numbers"
             className="border-accent/40 bg-accent/5"
           />
           <Connector variant="internal" />
           <PipelineNode
-            title="Gemini image"
-            subtitle="generate_guided_scene_image_data_url"
+            title="Scene illustration"
+            subtitle="Art matched to the moment"
             className="border-accent/40 bg-accent/5"
           />
         </div>
         <div className="flex flex-wrap items-center justify-center gap-2 lg:justify-end">
           <PipelineNode
-            title="POST /api/guided/step"
-            subtitle="Kid line → next scene payload"
+            title="Player choice"
+            subtitle="Tap → next scene"
             className="border-primary/30"
           />
           <Connector variant="decision" />
           <PipelineNode
-            title="Outcome gate"
-            subtitle="treeHealth ≤ 0 → lost; script complete → won"
+            title="Win, learn, or retry"
+            subtitle="Tree empty or story done"
             className="border-destructive/35 bg-destructive/5"
           />
         </div>

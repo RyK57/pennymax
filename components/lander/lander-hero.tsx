@@ -51,13 +51,13 @@ export function LanderHero() {
             asChild
           >
             <a href={`#${SECTION_IDS.architecture}`} className="gap-1">
-              Explore architecture
+              How it works
               <ChevronDown className="h-4 w-4" />
             </a>
           </Button>
         </div>
         <p className="font-mono mt-16 text-[10px] uppercase tracking-[0.6em] text-muted-foreground/70">
-          pennymax · guided + free-form
+          Guided stories · open-ended play
         </p>
       </div>
     </section>

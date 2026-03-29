@@ -1,18 +1,18 @@
 const phases = [
   {
-    phase: "Now · hackathon",
-    title: "Guided shell + dual provider stack",
-    body: "Flask blueprints for /api/guided/start|step, in-memory SESSIONS, OpenAI JSON schema for narrative + mechanics, Gemini for scene art. Next.js client with Zustand hydration.",
+    phase: "Today",
+    title: "Full guided story + illustrated scenes",
+    body: "Kids move through the Money Tree arc with choices that change balance and tree health scene by scene—plus an open map for curious explorers.",
   },
   {
-    phase: "Next",
-    title: "Persistence + classroom mode",
-    body: "Postgres session store, educator dashboards, anonymized telemetry on choice patterns, and scripted curriculum packs aligned to grade bands.",
+    phase: "Next up",
+    title: "Classrooms and progress you can trust",
+    body: "Saved sessions, simple educator views, and insights into which choices resonate—without losing the playful, low-friction feel.",
   },
   {
-    phase: "Stretch",
-    title: "Free-form world mesh",
-    body: "Wire the same prompt builders into simulate_turn and npc_chat routes so the map experience shares compaction, ledger, and tree health semantics with guided mode.",
+    phase: "Later",
+    title: "One world, every mode",
+    body: "Tighter links between guided lessons and free play so habits from the story show up when kids wander the map on their own.",
   },
 ] as const
 

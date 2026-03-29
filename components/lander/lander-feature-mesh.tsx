@@ -23,43 +23,43 @@ interface MeshNode {
 const nodes: MeshNode[] = [
   {
     id: "narrative",
-    title: "Structured LLM",
-    tag: "OpenAI · JSON object",
+    title: "Story engine",
+    tag: "Age-smart narration",
     icon: Bot,
     detail:
-      "guided_engine calls message_json_object with the DSG Money Tree script, age-aware language notes, and strict keys: scriptStep, balanceCents, treeHealth, suggestedActions[], imagePrompt.",
+      "Each beat knows your learner's band, goals, and tone—so choices, hints, and consequences read like a coach, not a textbook.",
   },
   {
     id: "image",
-    title: "Scene synthesis",
-    tag: "Gemini · data URL",
+    title: "Scene art",
+    tag: "Illustrated every turn",
     icon: ImageIcon,
     detail:
-      "gemini_image_client prepends a cartoon style prefix, returns a data URL when configured, else deterministic placeholder—keeps the UI always visual.",
+      "Every decision gets a fresh cartoon-style frame so kids see the market, the jar, and the Money Tree—not just numbers on a screen.",
   },
   {
     id: "api",
-    title: "Flask orchestration",
-    tag: "SESSIONS dict",
+    title: "Session brain",
+    tag: "Remembers the story",
     icon: Server,
     detail:
-      "api/routes/guided.py exposes start/step; guided_engine owns validation, clamps, and outcome transitions before JSON responses hit the React client.",
+      "Your playthrough stays consistent: balance, tree health, and story step advance together so nothing “resets” mid-lesson by accident.",
   },
   {
     id: "client",
-    title: "Zustand store",
-    tag: "useGuidedStore",
+    title: "Play surface",
+    tag: "HUD & choices",
     icon: LayoutGrid,
     detail:
-      "Client merges payloads into scene state, drives GuidedPlay HUD (balance, tree, step title), and posts kid lines as plain text to the step endpoint.",
+      "The screen shows balance, tree vitality, and what to do next—kids tap a path; you see the lesson land in real time.",
   },
   {
     id: "free",
-    title: "Shared sim routes",
-    tag: "simulate_turn · npc_chat",
+    title: "Guided + open play",
+    tag: "Same world, two modes",
     icon: Workflow,
     detail:
-      "Same Python app hosts consolidate and free-roam endpoints—future work unifies ledger compaction across guided and map modes.",
+      "Follow a scripted Money Tree arc or roam the map—both modes share the same money rules so skills transfer naturally.",
   },
 ]
 
@@ -73,7 +73,7 @@ export function LanderFeatureMesh() {
         <div className="absolute inset-8 rounded-full border border-dashed border-primary/25 bg-primary/[0.03]" />
         <div className="absolute left-1/2 top-1/2 z-10 flex h-24 w-24 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-2xl border border-accent/40 bg-accent/15 text-center shadow-sm">
           <span className="font-primary px-2 text-xs font-bold leading-tight text-foreground">
-            Penny&apos;s World core
+            Pennymax
           </span>
         </div>
         {nodes.map((n, i) => {
@@ -109,7 +109,7 @@ export function LanderFeatureMesh() {
       </div>
       <div className="rounded-2xl border border-border bg-card/90 p-6 shadow-sm">
         <p className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-          Selected node
+          Tap another piece
         </p>
         <h3 className="font-primary mt-2 text-xl font-semibold">{selected.title}</h3>
         <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{selected.detail}</p>

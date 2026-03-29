@@ -11,11 +11,11 @@ import { cn } from "@/lib/utils"
 import { DEMO_HREF, FREE_PLAY_HREF, SECTION_IDS } from "./lander-constants"
 
 const links = [
-  { href: `#${SECTION_IDS.demo}`, label: "Live demo" },
-  { href: `#${SECTION_IDS.pipeline}`, label: "Pipeline" },
-  { href: `#${SECTION_IDS.architecture}`, label: "Architecture" },
-  { href: `#${SECTION_IDS.roadmap}`, label: "Roadmap" },
-  { href: `#${SECTION_IDS.mesh}`, label: "Stack mesh" },
+  { href: `#${SECTION_IDS.demo}`, label: "See it in action" },
+  { href: `#${SECTION_IDS.pipeline}`, label: "How it works" },
+  { href: `#${SECTION_IDS.architecture}`, label: "Behind the scenes" },
+  { href: `#${SECTION_IDS.roadmap}`, label: "What's next" },
+  { href: `#${SECTION_IDS.mesh}`, label: "Scenes" },
   { href: `#${SECTION_IDS.contact}`, label: "Contact" },
 ] as const
 
@@ -26,7 +26,7 @@ export function LanderNav() {
     <header className="pointer-events-none fixed inset-x-0 top-0 z-50 flex justify-center px-4 pt-5">
       <div className="pointer-events-auto w-full max-w-5xl">
         <p className="mb-2 text-center font-mono text-[10px] font-medium uppercase tracking-[0.35em] text-muted-foreground sm:text-[11px]">
-          /// alternate financial literacy sandbox &gt;&gt;&gt;
+          Money skills kids actually want to play
         </p>
         <nav
           className={cn(
@@ -101,7 +101,7 @@ export function LanderNav() {
                 className="rounded-xl px-3 py-2.5 text-sm font-medium text-muted-foreground"
                 onClick={() => setOpen(false)}
               >
-                Free form map
+                Open map play
               </Link>
             </div>
           </div>

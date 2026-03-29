@@ -5,12 +5,11 @@ export function LanderDiagrams() {
     <div className="grid gap-12 lg:grid-cols-2">
       <figure className="space-y-3">
         <figcaption className="font-primary text-lg font-semibold tracking-tight">
-          Backend architecture
+          How choices become the next scene
         </figcaption>
         <p className="text-sm leading-relaxed text-muted-foreground">
-          Player actions, world state, prompt assembly, dual-model calls (OpenAI + optional Gemini),
-          and compaction loops—mapped the same way we ship in{" "}
-          <code className="rounded bg-muted px-1 font-mono text-xs">api/</code>.
+          From a tap in the browser to the story engine, scene art, and saved progress—so every
+          turn stays in sync without exposing extra complexity to kids.
         </p>
         <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
           {/* eslint-disable-next-line @next/next/no-img-element -- SVG asset */}
@@ -24,12 +23,11 @@ export function LanderDiagrams() {
       </figure>
       <figure className="space-y-3">
         <figcaption className="font-primary text-lg font-semibold tracking-tight">
-          Next.js surface area
+          What you interact with
         </figcaption>
         <p className="text-sm leading-relaxed text-muted-foreground">
-          How the App Router client talks to route handlers and the Python sidecar—mirrors the
-          structure in <code className="rounded bg-muted px-1 font-mono text-xs">app/</code> and{" "}
-          <code className="rounded bg-muted px-1 font-mono text-xs">components/guided/</code>.
+          The pages and panels learners actually see—wired so guided play and the open map both feel
+          fast, familiar, and easy to follow.
         </p>
         <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
           {/* eslint-disable-next-line @next/next/no-img-element */}
