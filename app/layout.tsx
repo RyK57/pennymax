@@ -7,8 +7,8 @@ const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Pennymaxxing',
-  description: 'Alternate Finacial Literacy Sandbox Experience for Kids',
+  title: 'Pennymax',
+  description: 'Alternate Financial Literacy Sandbox Experience for Kids',
 }
 
 export default function RootLayout({
