@@ -6,6 +6,7 @@ import json
 import logging
 import os
 import re
+import ssl
 import time
 import urllib.error
 import urllib.request
@@ -118,6 +119,42 @@ class OpenRouterImageError(RuntimeError):
         self.status = status
 
 
+def _openrouter_ssl_verify_disabled() -> bool:
+    return os.environ.get("GUIDED_OPENROUTER_SSL_VERIFY", "").strip().lower() in (
+        "0",
+        "false",
+        "no",
+        "off",
+    )
+
+
+def _openrouter_ssl_context() -> ssl.SSLContext:
+    """
+    macOS / some Python builds ship without a usable CA store for urllib;
+    certifi supplies Mozilla's bundle. Optional GUIDED_OPENROUTER_SSL_VERIFY=0
+    disables verification (local debugging only).
+    """
+    if _openrouter_ssl_verify_disabled():
+        logger.warning(
+            "OpenRouter: TLS certificate verification is OFF (GUIDED_OPENROUTER_SSL_VERIFY). "
+            "Unsafe — use only for local debugging."
+        )
+        ctx = ssl.SSLContext(ssl.PROTOCOL_TLS_CLIENT)
+        ctx.check_hostname = False
+        ctx.verify_mode = ssl.CERT_NONE
+        return ctx
+    try:
+        import certifi
+
+        return ssl.create_default_context(cafile=certifi.where())
+    except ImportError:
+        logger.warning(
+            "certifi not installed; OpenRouter TLS may fail on some systems. "
+            "pip install certifi or set GUIDED_OPENROUTER_SSL_VERIFY=0 (insecure)."
+        )
+        return ssl.create_default_context()
+
+
 def _openrouter_post_chat_completions(payload: dict[str, Any]) -> dict[str, Any]:
     key = _openrouter_api_key()
     if not key:
@@ -145,8 +182,9 @@ def _openrouter_post_chat_completions(payload: dict[str, Any]) -> dict[str, Any]
         timeout = float(os.environ.get("GUIDED_OPENROUTER_TIMEOUT", "120"))
     except ValueError:
         timeout = 120.0
+    ctx = _openrouter_ssl_context()
     try:
-        with urllib.request.urlopen(req, timeout=timeout) as resp:
+        with urllib.request.urlopen(req, timeout=timeout, context=ctx) as resp:
             body = resp.read().decode("utf-8")
             return json.loads(body)
     except urllib.error.HTTPError as e:
@@ -519,6 +557,7 @@ def generate_guided_scene_image_data_url(full_image_prompt: str) -> str | None:
       GUIDED_IMAGE_PROVIDER — openrouter | google to force routing
       GUIDED_OPENROUTER_IMAGE_MODEL — OpenRouter slug (default maps NANO_BANANA to google/gemini-3.1-flash-image-preview)
       OPENROUTER_BASE_URL, OPENROUTER_HTTP_REFERER, OPENROUTER_APP_TITLE, GUIDED_OPENROUTER_TIMEOUT
+      GUIDED_OPENROUTER_SSL_VERIFY — set to 0/false/off only if TLS fails locally (insecure)
       GUIDED_GEMINI_IMAGE_MODEL | NANO_BANANA_MODEL (Google default gemini-3.1-flash-image-preview)
       GUIDED_GEMINI_IMAGE_MODEL_FALLBACKS — comma-separated; slugs or bare gemini-* ids
       GUIDED_GEMINI_DISABLE — if true, skip all image API calls (placeholders only)
